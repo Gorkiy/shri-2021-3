@@ -1,12 +1,6 @@
-import { backgroundColors, effects, fontColors, Reset, Effect } from './model';
+import { backgroundColors, effects, fontColors, Color, Reset, Effect, Options } from './model';
 
-interface Options {
-    font: string,
-    background: string,
-    effects: Effect[]
-}
-
-function addColor(text: string, color: string, isBackground: boolean = false): string {
+function addColor(text: string, color: Color, isBackground: boolean = false): string {
     if (isBackground) {
         return text + backgroundColors[color];
     }

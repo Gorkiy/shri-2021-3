@@ -1,6 +1,8 @@
 import { color } from './colors';
-export function markdown(text, options) {
-    let result = text;
+import { Options } from './model';
+
+export function markdown(text: string, options: Options) {
+    let result : string = text;
     if (options) {
         if (options.bold) {
             result = color(`**${result}**`, { font: 'yellow', effects: ['bright'] });

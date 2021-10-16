@@ -1,24 +1,36 @@
-interface Color {
-    [key: string]: string;
+export type Color = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white';
+
+export type Colors = {
+    [key: string]: string
 }
 
-export enum Effect {
-    bright,
-    dim,
-    italic,
-    underscore,
-    blink
+export type Effect = 'bright' | 'dim' | 'italic' | 'underscore' | 'blink';
+
+export type Effects = {
+    [key: string]: string
 }
 
-export const Reset = '\x1b[0m';
-export const effects: Color = {
+export interface Options {
+    font?: Color,
+    background?: Color,
+    effects?: Effect[],
+    bold?: boolean,
+    italic?: boolean,
+    mono?: boolean,
+    link?: string
+}
+
+export const Reset: string = '\x1b[0m';
+
+export const effects: Effects = {
     bright: '\x1b[1m',
     dim: '\x1b[2m',
     italic: '\x1b[3m',
     underscore: '\x1b[4m',
     blink: '\x1b[5m',
 };
-export const fontColors: Color = {
+
+export const fontColors: Colors = {
     black: '\x1b[30m',
     red: '\x1b[31m',
     green: '\x1b[32m',
@@ -28,7 +40,8 @@ export const fontColors: Color = {
     cyan: '\x1b[36m',
     white: '\x1b[37m',
 };
-export const backgroundColors: Color = {
+
+export const backgroundColors: Colors = {
     black: '\x1b[40m',
     red: '\x1b[41m',
     green: '\x1b[42m',
@@ -38,7 +51,8 @@ export const backgroundColors: Color = {
     cyan: '\x1b[46m',
     white: '\x1b[47m',
 };
-export const contrast: Color = {
+
+export const contrast: Colors = {
     black: 'white',
     red: 'black',
     green: 'black',
