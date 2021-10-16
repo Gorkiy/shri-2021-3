@@ -1,6 +1,8 @@
 import { color } from './colors';
 import { markdown } from './md';
-export function style(text, options) {
+import { Options } from './model';
+
+export function style(text: string, options: Options) {
     if (text.length === 0) {
         return text;
     }

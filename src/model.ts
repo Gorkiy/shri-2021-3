@@ -10,6 +10,10 @@ export type Effects = {
     [key: string]: string
 }
 
+export type Contrast = {
+    [key: string]: Color
+}
+
 export interface Options {
     font?: Color,
     background?: Color,
@@ -52,7 +56,7 @@ export const backgroundColors: Colors = {
     white: '\x1b[47m',
 };
 
-export const contrast: Colors = {
+export const contrast: Contrast = {
     black: 'white',
     red: 'black',
     green: 'black',
